@@ -1,0 +1,54 @@
+:root {
+  /* Approved EL SULTAN 60-30-10 Brand Palette */
+  --sultan-bone: #F3EADA;          /* 60% Primary Warm Bone canvas */
+  --sultan-burgundy: #672938;      /* 30% Structural Deep Burgundy */
+  --sultan-burgundy-dark: #4f1d29; /* Hover / deep Burgundy anchor */
+  --sultan-ochre: #C98B54;         /* 10% Ochre accent on dark & Burgundy surfaces */
+  --sultan-charcoal: #191B1A;      /* Neutral Charcoal ink & dark canvas */
+
+  /* Semantic Color Hierarchy */
+  --surface-canvas: var(--sultan-bone);
+  --surface-structure: var(--sultan-burgundy);
+  --surface-dark: var(--sultan-charcoal);
+  --surface-accent: var(--sultan-ochre);
+  --ink-primary: var(--sultan-charcoal);
+  --ink-muted: rgba(25, 27, 26, 0.74);
+  --ink-on-dark: var(--sultan-bone);
+  --hairline-light: rgba(25, 27, 26, 0.14);
+  --hairline-dark: rgba(243, 234, 218, 0.16);
+
+  /* Locally Bundled Typography (Lato for Latin/Lithuanian + Fira Sans Cyrillic coverage) */
+  --font-display: "Lato", "Fira Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: "Lato", "Fira Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Editorial Type Scale */
+  --text-hero: clamp(2.5rem, 5vw, 4.5rem);
+  --text-section: clamp(2rem, 4vw, 3.5rem);
+  --text-body: 1rem;
+  --text-label: 0.75rem;
+
+  /* Strict 8-Point Spacing System */
+  --space-1: 0.5rem;   /* 8px */
+  --space-2: 1rem;     /* 16px */
+  --space-3: 1.5rem;   /* 24px */
+  --space-4: 2rem;     /* 32px */
+  --space-5: 2.5rem;   /* 40px */
+  --space-6: 3rem;     /* 48px */
+  --space-8: 4rem;     /* 64px */
+  --space-10: 5rem;    /* 80px */
+  --space-12: 6rem;    /* 96px */
+  --space-16: 8rem;    /* 128px */
+
+  /* Layout & Navigation Geometry */
+  --header-height: 4rem; /* 64px */
+  --grid-margin-mobile: var(--space-2);  /* 16px */
+  --grid-margin-desktop: var(--space-8); /* 64px */
+  --grid-max-width: 1440px;
+
+  /* Flat Editorial Surfaces (zero decorative rounding or drop shadows) */
+  --radius-none: 0px;
+  --shadow-none: none;
+
+  /* Motion Timing */
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+}

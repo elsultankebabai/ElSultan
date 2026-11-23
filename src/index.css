@@ -1,0 +1,149 @@
+@import "tailwindcss";
+@import "./styles/brand-tokens.css";
+
+@theme {
+  --font-sans: "Lato", "Fira Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: "Lato", "Fira Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Lato", "Fira Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-sultan-bone: #F3EADA;
+  --color-sultan-burgundy: #672938;
+  --color-sultan-burgundy-dark: #4f1d29;
+  --color-sultan-ochre: #C98B54;
+  --color-sultan-charcoal: #191B1A;
+
+  --radius-xs: 0.375rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+
+  --shadow-xs: 0 1px 2px rgba(25, 27, 26, 0.06);
+  --shadow-sm: 0 4px 12px rgba(25, 27, 26, 0.08);
+  --shadow-md: 0 10px 24px rgba(25, 27, 26, 0.12);
+  --shadow-lg: 0 18px 36px rgba(25, 27, 26, 0.16);
+  --shadow-xl: 0 24px 48px rgba(25, 27, 26, 0.22);
+  --shadow-2xl: 0 32px 64px rgba(25, 27, 26, 0.3);
+}
+
+@layer base {
+  html {
+    font-family: var(--font-body);
+    background-color: var(--sultan-bone);
+    color: var(--sultan-charcoal);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    overflow-x: clip;
+    font-family: var(--font-body);
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  section[id] {
+    scroll-margin-top: var(--header-height);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Soft rounded architectural framing across showcase stages */
+.chair-arch-mask {
+  border-radius: 2rem;
+}
+
+@keyframes floatFocal {
+  0%, 100% {
+    transform: translate3d(0, -10px, 0) rotate(-1.2deg);
+  }
+  50% {
+    transform: translate3d(0, 10px, 0) rotate(1.2deg);
+  }
+}
+
+@keyframes floatWingA {
+  0%, 100% {
+    transform: translate3d(0, -14px, 0) rotate(2deg);
+  }
+  50% {
+    transform: translate3d(0, 12px, 0) rotate(-2.5deg);
+  }
+}
+
+@keyframes floatWingB {
+  0%, 100% {
+    transform: translate3d(0, 12px, 0) rotate(-2.5deg);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0) rotate(2deg);
+  }
+}
+
+@keyframes feedMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-float-focal {
+  animation: floatFocal 5.2s ease-in-out infinite;
+}
+
+.animate-float-wing-a {
+  animation: floatWingA 5.8s ease-in-out infinite;
+}
+
+.animate-float-wing-b {
+  animation: floatWingB 6.4s ease-in-out infinite;
+}
+
+.animate-feed-marquee {
+  animation: feedMarquee 30s linear infinite;
+}
+
+.animate-feed-marquee:hover {
+  animation-play-state: paused;
+}
